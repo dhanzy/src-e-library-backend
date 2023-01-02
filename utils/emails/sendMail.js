@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-// const handlebars = require("handlebars");
+const handlebars = require("handlebars");
 const nodemailer = require("nodemailer");
 
 const sendEmail = async (email, subject, payload, template) => {

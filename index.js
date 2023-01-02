@@ -6,6 +6,8 @@ const fs = require("fs");
 require("dotenv").config();
 const morgan = require("morgan");
 const { connectionDB } = require("./config/db");
+const handlebars = require("handlebars");
+const nodemailer = require("nodemailer");
 const PORT = process.env.PORT || 3100;
 
 connectionDB();
