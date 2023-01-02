@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { PDFNet } = require("@pdftron/pdfnet-node");
+// const { PDFNet } = require("@pdftron/pdfnet-node");
 const { fromPath } = require("pdf2pic");
 
 // const { addMetadata } = require("../utils/helper");
