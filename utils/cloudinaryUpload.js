@@ -56,7 +56,6 @@ async function cloudinaryUpload(req, res) {
                 console.log("Gotten Result");
                 resolve(result);
               } else {
-                console.log(error);
                 reject(error);
               }
             }
@@ -64,8 +63,7 @@ async function cloudinaryUpload(req, res) {
           streamifier.createReadStream(req.file.buffer).pipe(stream);
         });
       } catch (error) {
-        console.log(error);
-        return res.status({ error: error.message });
+        return res.status(400).json({ error: error.message });
       }
     };
 
@@ -90,8 +88,9 @@ async function cloudinaryUpload(req, res) {
 
     await upload(req);
   } catch (error) {
+    console.log("Last Error");
     console.log(error);
-    res.status(400).json({ error: "An error occured" });
+    res.status(400).json({ error: error.message });
   }
 }
 
